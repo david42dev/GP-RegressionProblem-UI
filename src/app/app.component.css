@@ -1,0 +1,111 @@
+.toolbar {
+  height: 60px;
+  margin: -8px;
+  display: flex;
+  align-items: center;
+  /*background-color: #673ab7;*/
+  background-color: #3f51b5;
+  color: white;
+  font-weight: 600;
+}
+
+.toolbar span {
+  margin: 32px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+svg.material-icons {
+  height: 24px;
+  width: auto;
+}
+
+svg.material-icons:not(:last-child) {
+  margin-right: 8px;
+}
+
+a,
+a:visited,
+a:hover {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #125699;
+}
+
+footer {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+}
+
+svg#clouds {
+  position: fixed;
+  bottom: -160px;
+  left: -230px;
+  z-index: -10;
+  width: 1920px;
+}
+
+#startButton {
+  margin-left: 30px;
+  background-color: #29a329 !important;
+}
+
+/*Mat Card section:*/
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 20px;
+}
+
+.title-custom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px 10px 10px;
+  margin-bottom: -20px;
+}
+
+.file-management-section {
+  max-width: 30%;
+}
+
+.file-section{
+  margin: 20px 20px 30px;
+}
+
+
+.setting-section {
+
+}
+
+mat-divider{
+  margin-top: 20px;
+}
+
+.spinner {
+  margin-left: 20px;
+}
+

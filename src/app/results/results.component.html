@@ -1,0 +1,48 @@
+<p>The output table contains the average result over the given number of runs. The term 'over the best' means that the
+  value is the average over the best individuals per generation over all runs. The term 'over all' means that the value
+  is the average over all individuals per generation over all runs.</p>
+<!--Start Output Table:-->
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="outputs">
+
+    <!-- Generation Column -->
+    <ng-container matColumnDef="generation">
+      <th mat-header-cell *matHeaderCellDef> Generation</th>
+      <td mat-cell *matCellDef="let element"> {{element.generation}} </td>
+    </ng-container>
+
+    <!-- Hits Column -->
+    <ng-container matColumnDef="hits">
+      <th mat-header-cell *matHeaderCellDef> Hits of the best</th>
+      <td mat-cell *matCellDef="let element"> {{element.avgHits}} </td>
+    </ng-container>
+
+    <!-- Adj. Fitness Column -->
+    <ng-container matColumnDef="adjFitness">
+      <th mat-header-cell *matHeaderCellDef> Adj. Fitness over the best</th>
+      <td mat-cell *matCellDef="let element"> {{element.avgAdjFitness}} </td>
+    </ng-container>
+
+    <!-- Avg. Fitness Column -->
+    <ng-container matColumnDef="avgFitness">
+      <th mat-header-cell *matHeaderCellDef> Adj. Fitness over all</th>
+      <td mat-cell *matCellDef="let element"> {{element.avgFitnessOverAll}} </td>
+    </ng-container>
+
+    <!-- Std. Fitness Column -->
+    <ng-container matColumnDef="stdFitness">
+      <th mat-header-cell *matHeaderCellDef> Std. Fitness over the best</th>
+      <td mat-cell *matCellDef="let element"> {{element.avgStdFitness}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+<!--Start Output Graph:-->
+<div class="column">
+  <div class="mat-h2 mat-title custom-title">Graph</div>
+  <app-result-graph [outputData]="outputData"></app-result-graph>
+</div>

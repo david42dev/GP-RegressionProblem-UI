@@ -1,0 +1,118 @@
+<div class="row">
+  <div class="column">
+    <h4>Parameters</h4>
+    <form class="example-form">
+
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="settings.numberOfRuns" name="numberOfRuns" type="number" matInput
+               placeholder="Number of Runs" value="10" required pattern="^(([1-9][0]*)+)">
+        <mat-error>Number of runs must be greater or equal 1</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="settings.initialTreeDepthMin" required pattern="^(0|([1-9][0]*)+)"
+               name="initialTreeDepthMin"
+               type="number" matInput placeholder="Initial Tree Depth Min" value="2">
+        <mat-error>Initial Tree Depth min must be greater or equal 0</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="settings.initialTreeDepthMax" required pattern="^(([1-9][0]*)+)" name="initialTreeDepthMax"
+               type="number" matInput placeholder="Initial Tree Depth Max" value="6">
+        <mat-error>Initial Tree Depth max must be greater or equal 1</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="settings.initialGrowProbability" required pattern="^(0([.][0-9]+)?|1(([.]0)?))" step="0.1"
+               name="initialGrowProbability " type="number" matInput placeholder="Initial Tree Grow Probability"
+               value="0.5">
+        <mat-error>Probability must be between 0 and 1</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="settings.maxTreeSizeCrossover" required pattern="^(([1-9][0]*)+)"
+               name="maxTreeSizeCrossover"
+               type="number" matInput
+               placeholder="Max Tree size crossover" value="12">
+        <mat-error>Max Tree size crossover must be greater or equal 1</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="settings.populationSize" required pattern="^(([1-9][0]*)+)" name="populationSize"
+               type="number" matInput
+               placeholder="Population Size" value="800">
+        <mat-error>Population Size max must be greater or equal 1</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="settings.generationSize" required pattern="^(([1-9][0]*)+)" name="generationSize"
+               type="number" matInput
+               placeholder="Generation Size" value="30">
+        <mat-error>Generation size must be greater or equal 1</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="settings.crossoverProbability" required pattern="^(0([.][0-9]+)?|1(([.]0)?))" step="0.1"
+               name="crossoverProbability" type="number" matInput placeholder="Crossover Probability" value="0.9">
+        <mat-error>Probability must be between 0 and 1</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="settings.mutationProbability" required pattern="^(0([.][0-9]+)?|1(([.]0)?))" step="0.1"
+               name="mutationProbability" type="number" matInput placeholder="Mutation Probability" value="0.1">
+        <mat-error>Probability must be between 0 and 1</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="settings.reproductionProbability" required pattern="^(0([.][0-9]+)?|1(([.]0)?))" step="0.1"
+               name="reproductionProbability" type="number" matInput
+               placeholder="Reproduction Probability" value="0">
+        <mat-error>Probability must be between 0 and 1</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="settings.selectionNonTerminals" required pattern="^(0([.][0-9]+)?|1(([.]0)?))" step="0.1"
+               name="selectionNonTerminals" type="number" matInput
+               placeholder="Selection - Non-Terminals" value="0.9">
+        <mat-error>Selection probability must be between 0 and 1</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="settings.selectionTerminals" required pattern="^(0([.][0-9]+)?|1(([.]0)?))" step="0.1"
+               name="selectionTerminals" type="number" matInput
+               placeholder="Selection - Terminals" value="0.1">
+        <mat-error>Selection probability must be between 0 and 1</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="settings.tournamentSize" required pattern="^(([1-9][0]*)+)" name="tournamentSize"
+               type="number" matInput
+               placeholder="Tournament Size" value="4">
+        <mat-error>Tournament Size must be greater or equal 1</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="settings.elitism" required pattern="^(0|([1-9][0]*)+)" name="elitism" type="number" matInput
+               placeholder="Elitism" value="4">
+        <mat-error>Elitism must be greater or equal 0</mat-error>
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="column">
+    <h4>Functions</h4>
+    <mat-selection-list [(ngModel)]="settings.functions" name="functions" #functions>
+      <mat-list-option *ngFor="let function of listOfFunctions" [value]="function">
+        {{function}}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+  <div class="column">
+    <h4>Terminals</h4>
+    <mat-selection-list [(ngModel)]="settings.terminals" name="terminals" #terminals>
+      <mat-list-option *ngFor="let terminal of listOfTerminals" [value]="terminal">
+        {{terminal}}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+</div>
+

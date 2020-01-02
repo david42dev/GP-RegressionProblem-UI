@@ -1,0 +1,14 @@
+.upload-input {
+  margin: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#downloadButton {
+  align-self: end;
+  margin-left: 20px;
+}

@@ -1,0 +1,9 @@
+<p>Please select an input file with the trainings data for the regression problem. The format of the file should be "X Y
+  Result" </p>
+<div class="row">
+  <p>Get example file:</p>
+  <button id="downloadButton" (click)="downloadExampleTrainingdata()" mat-raised-button color="basic">Download</button>
+</div>
+<input class="upload-input btn btn-secondary" type="file" id="customFile" (change)="selectFile($event)">
+<button class="upload-input" mat-raised-button color="basic" [disabled]="!selectedFiles" (click)="upload()">Save File
+</button>
